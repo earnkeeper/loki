@@ -6,9 +6,3 @@ grafana:
       kubernetes.io/ingress.class: "nginx"
       cert-manager.io/issuer: "letsencrypt-prod"
     path: /
-    hosts:
-      - "{{ .Release.Name }}.{{ .Values.ingress.hostname }}"
-    tls:
-      - hosts:
-          - "{{ .Release.Name }}.{{ .Values.ingress.hostname }}"
-        secretName: "{{ .Release.Name }}-public-tls"
