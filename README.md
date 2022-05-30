@@ -39,6 +39,8 @@ Commit your changes and push to `main` or `staging` branches. The github action 
 
 ## Reference
 
-### Python Socket.io
+To get the grafana admin password run the following:
 
-https://python-socketio.readthedocs.io/en/latest/
+```
+kubectl get secret --namespace <YOUR-NAMESPACE> loki-grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
+```
